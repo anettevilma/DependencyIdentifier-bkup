@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/style.css">
+<title>Dependency Identifier</title>
+<link href="css/jquery-ui.css" rel="stylesheet" />
+<link href="css/ui.jqgrid.css" rel="stylesheet" />
+<link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script src="libs/jquery/jquery-ui.js"></script>
+<script src="libs/jqGrid/i18n/grid.locale-en.js"></script>
+<script src="libs/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="js/dependency.js"></script>
+</head>
+
+
+
+<body>
+
+	<div class="box">
+		<div>
+
+			<h1 class="boxh1">Dependency Identifier</h1>
+			<h3 class="boxh3">Choose Project Path:</h3>
+			<input type="text" name="projectPath" id="projectPath"
+				class="text-input" />			
+			<button id="button">ok</button>
+		</div>
+
+
+		<div id="form" style="width: 100%;">
+			<table id="dependencyIdentGrid"></table>
+			<div id="pagerdependencyIdentifier"></div>
+		</div>
+		
+		<div>
+		<input id="responseInfo" type="text" disabled="disabled">  
+		</div>
+
+		<div>
+			<div id="xmlStringDiv"></div>
+			<input id="GenerateXmlFilebutton" value="Generate Xml" type="submit"
+				class="Xml-input " />
+		</div>
+	</div>
+
+
+</body>
+</html>

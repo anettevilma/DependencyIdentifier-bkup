@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://com/homedepot/ta/cu/ccs/xmlschema"
+	xmlns="http://com/homedepot/ta/cu/ccs/xmlschema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="1.0"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:appinfo>
+			<jaxb:globalBindings>
+				<xjc:simple />
+			</jaxb:globalBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+	<!-- DependencyInjectionRequest Starts -->
+	<xs:element name="dependencyInjectionRequest" type="DependencyInjectionRequest" />
+	<xs:complexType name="DependencyInjectionRequest">
+		<xs:sequence>
+			<xs:element name="AppName" type="xs:string" minOccurs="1"
+				maxOccurs="1"></xs:element>
+			<xs:element name="ProjectPath" type="xs:string" minOccurs="1"
+				maxOccurs="1"></xs:element>
+			<xs:element name="deprecatedJarListPath" type="xs:string"
+				minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- DependencyInjectionRequest Ends -->
+
+	<!-- DependencyInjectionResponse Starts -->
+	<xs:element name="dependencyInjectionResponse" type="DependencyInjectionResponse" />
+	<xs:complexType name="DependencyInjectionResponse">
+		<xs:sequence>
+			<xs:element name="DependencyDetailList" type="DependencyDetail" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="XmlString" type="xs:string" minOccurs="1"></xs:element>
+			<xs:element name="DeprecatedDependencyDetaillists" type="DeprecatedDependencyDetail" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			
+			<xs:element name="FileName" type="xs:string" minOccurs="1"></xs:element>	
+			<xs:element name="Read" type="xs:string" minOccurs="1"></xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="DependencyDetail">
+		<xs:sequence>
+			<xs:element name="JarName" type="xs:string" minOccurs="1"></xs:element>
+			<xs:element name="JarVersion" type="xs:string" minOccurs="1"></xs:element>
+		
+			<xs:element name="flag" type="xs:boolean" minOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeprecatedDependencyDetail">
+              <xs:sequence>
+                     <xs:element name="DeprecatedJarName" type="xs:string"
+                           minOccurs="1"></xs:element>
+                     <xs:element name="DeprecatedJarVersion" type="xs:string"
+                           minOccurs="1"></xs:element>
+              </xs:sequence>
+       </xs:complexType>
+	
+	<!-- DependencyInjectionResponse Ends -->
+
+</xs:schema>
